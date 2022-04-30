@@ -1,5 +1,5 @@
-# BigData-Naruto
-Big Data project about Naruto using the twint library to scrape tweets.
+# BigData-NFT
+Big Data project about NFT using the twint library to scrape tweets.
 
 
 1) Open terminal and set directory as file with csv file
