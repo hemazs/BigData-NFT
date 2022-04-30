@@ -9,19 +9,20 @@ Big Data project about Naruto using the twint library to scrape tweets.
           >cd
           >mkdir data
 4) Copy csv file to the data folder in hive-server 
-          >docker cp NarutoClean1.csv b1d3d6a1e506:root/data
+          >docker cp NFT_EN_Clean.csv b1d3d6a1e506:root/data
 5) Create directory inside hdfs 
-          >hadoop fs -mkdir root/data/BigData
+          >hadoop fs -mkdir BigData
 6) Put csv file into hdfs
-          >hadoop fs -put NarutoClean1.csv root/data/BigData
+          >hadoop fs -put NFT_EN_Clean.csv BigData
 7) Start the hive-server
           >hive
-8) Create a database named NarutoDB
-          hive> create database NarutoDB;
-9) Use the database NarutoDB
-          hive> use narutodb;
+8) Create a database named NFTdatabase
+          hive> create database NFTdatabase;
+9) Use the database NFTdatabase
+          hive> use NFTdatabase;
 10) Create table in database
-          hive>create external table narutotable4(
+          hive>create external table NFTtable(
+               index int,
                id int,
                `date` DATE,
                `time` TIMESTAMP,
@@ -29,5 +30,5 @@ Big Data project about Naruto using the twint library to scrape tweets.
                language string)
                row format delimited
                fields terminated by ',';
-11) Load csv file into narutotable4
-           hive> LOAD DATA INPATH 'root/data/BigData/NarutoClean1.csv' INTO TABLE narutotable4;
+11) Load csv file into NFTtable
+           hive> LOAD DATA INPATH 'BigData/NFT_EN_Clean.csv' INTO TABLE NFTtable;
